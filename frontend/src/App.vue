@@ -1,24 +1,29 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <div class="min-h-screen bg-gray-50">
+    <nav class="bg-blue-600 text-white shadow-lg">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <h1 class="text-2xl font-bold">Task Management System</h1>
+          <div class="space-x-4">
+            <router-link to="/" class="hover:text-blue-200 transition-colors">Dashboard</router-link>
+            <router-link to="/tasks" class="hover:text-blue-200 transition-colors">Tasks</router-link>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <main class="container mx-auto px-4 py-8">
+      <router-view />
+    </main>
+  </div>
 </template>
+
+<script>
+export default {
+  name: 'App'
+}
+</script>
 
 <style scoped>
 header {
